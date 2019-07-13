@@ -1,0 +1,54 @@
+from time import sleep
+
+print('\033[0;33mCLINICA PET MANIA\033[m\n')
+sleep(1)
+print('AGENDAMENTO:\n')
+# cadastro inicial com os dados do responsavel do animal
+print('-' * 30)
+print("\033[1;30mDADOS DO DONO DO ANIMAL\033[m")
+print('-' * 30)
+nome = input("\nNome do responsavel->")
+mail = input("E-mail->")
+endereco = input("Endereço->")
+# visibilidade do usuário de todos os seus dados cadastrados
+print('=' * 30)
+print('\n\033[1;30mCONFIRMAÇÃO DE DADOS CADASTRADOS\033[m\nNome:{}\ne-mail:{}\nendereço:{}\n'.format(nome, mail,
+                                                                                                      endereco))
+print('=' * 30)
+sleep(2)
+print('\033[1;30mDADOS DO PET\033[m\n')
+#especie = input('Tipo de especie->')
+itens = ('Macho', 'Femea')
+computador = (0, 1)
+print('''\033[1;31mGENERO:\033[m
+[0] Macho
+[1] Femea''')
+sexo = int(input('Qual sexo do animal ?->'))
+tipo = input('Qual a raça ?->')
+animal = input('Digite o nome dele ?->')
+causa = ('consulta veterinaria', 'tosa')
+computador1 = (0, 1)
+print('''\033[1;31mOPÇÕES:\033[m
+[0] Consulta Veterinaria
+[1] tosa''')
+mot = int(input('tipo de consulta ?->'))
+causa1 = ('segunda', 'terça', 'quarta', 'quinta', 'sexta')
+computador2 = (0, 1, 2, 3, 4)
+print('''\033[1;31m DIAS DISPONIVEIS\033[m:
+[0] SEGUNDA
+[1] TERÇA
+[2] QUARTA
+[3] QUINTA
+[4] SEXTA''')
+mot1 = int(input('Selecione a melhor data->'))
+data = str(input('Digite o horário->'))
+#Conserta, na notificação a data nao fica com o dia da semana selecionado ele fica com o valor numerico que foi selecionado
+print('\n{} seu agendamento foi marcado com sucesso'.format(nome))
+sleep(2)
+print('=' * 60)
+sleep(2)
+print('\nFoi encaminhado para o e-mail {} sua confirmação de agendamento\n'.format(mail))
+print('=' * 60)
+sleep(2)
+print('\n\033[1;30m Cadastro concluido com sucesso!!!\033[m\n')
+print('=' * 60)
