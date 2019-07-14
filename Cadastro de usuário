@@ -1,0 +1,26 @@
+from time import sleep
+
+print("REGISTRO DE USUÁRIO\n")
+sleep(2)
+#melhorar
+print('Digite \033[0;31m[sim]\033[m ou \033[0;31m[não]\033[m')
+login = str(input('possui login?->'))
+if login == 'sim':
+    input('Digite login:')
+    input('Digite senha:')
+    print('Realizar agedamento!!!')
+else:
+    nome=str(input("nome completo:"))
+    dia=str(input('data de nascimento:'))
+    mes=str(input('mes:'))
+    ano=str(input('ano de nascimento:'))
+    mail=str(input('digite e-mail:'))
+    login=str(input('nome de login:'))
+    input('senha:')
+    input('repetir a senha:')
+    print('''\033[1;31mCONFIRMAÇÃO DE DADOS:\033[m
+          Nome:{}
+          Data:{}/{}/{}
+          E-mail:{}
+          Login:{}'''.format(nome,dia,mes,ano,mail,login))
+    print('\nRealizar agedamento!!!')
