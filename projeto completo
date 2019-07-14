@@ -1,0 +1,108 @@
+from time import sleep
+
+
+print("\033[1;33mREGISTRO DE USUÁRIO\033[m\n")
+sleep(2)
+#melhorar
+print('Digite \033[0;31m[sim]\033[m ou \033[0;31m[não]\033[m')
+login = str(input('possui login?->'))
+if login == 'sim':
+    input('Login:')
+    input('Senha:')
+    #print('Realizar agedamento!!!')
+else:
+    nome=str(input("nome completo:"))
+    dia=str(input('data de nascimento:'))
+    mes=str(input('mes:'))
+    ano=str(input('ano de nascimento:'))
+    mail=str(input('digite e-mail:'))
+    login=str(input('nome de login:'))
+    input('senha:')
+    input('repetir a senha:')
+    print('''\033[1;31mCONFIRMAÇÃO DE DADOS:\033[m
+          Nome:{}
+          Data:{}/{}/{}
+          E-mail:{}
+          Login:{}'''.format(nome,dia,mes,ano,mail,login))
+    print('\nRealizar agedamento!!!')
+sleep(2)
+print('\n')
+print('-=' * 30)
+print('\033[1;33mCLINICA PET MANIA\033[m')
+print('-=' * 30)
+#print('\n')
+sleep(2)
+print('\033[1;34mAGENDAMENTO:\033[m\n')
+print('-' * 30)
+print("\033[1;30mDADOS DO DONO DO ANIMAL\033[m")
+print('-' * 30)
+nome1 = input("\nNome do responsavel->")
+mail1 = input("E-mail->")
+endereco = input("Endereço->")
+# visibilidade do usuário de todos os seus dados cadastrados
+print('=' * 30)
+print('\n\033[1;30mCONFIRMAÇÃO DE DADOS CADASTRADOS\033[m\nNome:{}\ne-mail:{}\nendereço:{}\n'.format(nome1, mail1,
+                                                                                                      endereco))
+print('=' * 30)
+sleep(2)
+print('\033[1;30mDADOS DO PET\033[m')
+print('=' * 30)
+print('\n')
+#especie = input('Tipo de especie->')
+itens = ('Macho', 'Femea')
+computador = (0, 1)
+print('''\033[1;31mGENERO:\033[m
+[0] Macho
+[1] Femea''')
+sexo = int(input('Qual sexo do animal ?->'))
+tipo = input('Qual a raça ?->')
+animal = input('Digite o nome dele ?->')
+causa = ('consulta veterinaria', 'tosa')
+computador1 = (0, 1)
+opção=print('''\n\033[1;31mOPÇÕES:\033[m
+[0] Consulta Veterinaria
+[1] tosa''')
+if opção == '0':
+    mot = int(input('tipo de consulta ?->'))
+    print('-=' * 10)
+    print('\033[1;31mCONSULTA VETERINARIA\033[m')
+    print('-=' * 10)
+    sleep(2)
+    #mot = int(input('tipo de consulta ?->'))
+    causa1 = ('segunda', 'terça', 'quarta', 'quinta', 'sexta')
+    computador2 = (0, 1, 2, 3, 4)
+    print('''\033[1;31m DIAS DISPONIVEIS\033[m:
+    [0] SEGUNDA
+    [1] TERÇA
+    [2] QUARTA
+    [3] QUINTA
+    [4] SEXTA''')
+    mot1 = int(input('Selecione uma de nossas datas disponiveis->'))
+    data1 = str(input('Digite o horário->'))
+else:
+    mot = int(input('Tipo de consulta ?->'))
+    print('-=' * 3)
+    print('\033[1;31mTOSA\033[m')
+    print('-=' * 3)
+    sleep(2)
+    causa1 = ('segunda', 'terça', 'quarta', 'quinta', 'sexta')
+    computador2 = (0, 1, 2, 3, 4)
+    print('''\033[1;31m DIAS DISPONIVEIS\033[m:
+    [0] SEGUNDA
+    [1] TERÇA
+    [2] QUARTA
+    [3] QUINTA
+    [4] SEXTA''')
+    mot1 = int(input('datas disponiveis->'))
+    data1 = str(input('Digite o horário->'))
+print('=' * 50)
+print('\n{}Seu agendamento foi marcado com sucesso'.format(nome1))
+print('=' * 50)
+sleep(2)
+print('=' * 70)
+print('\nFoi encaminhado para o e-mail {} sua confirmação de agendamento\n'.format(mail1))
+print('=' * 70)
+sleep(2)
+print('=' * 40)
+print('\n\033[1;30m Agendamento concluido com sucesso!!!\033[m\n')
+print('=' * 40)
