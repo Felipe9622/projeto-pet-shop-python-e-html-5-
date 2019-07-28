@@ -9,9 +9,9 @@ sleep(2)
 print("\033[1;33mPOSSUI LOGIN?\033[m\n")
 #preenchimento deve ser tudo em letra minuscula
 sleep(2)
-print('Digite \033[0;31m[SIM]\033[m ou \033[0;31m[NÃO]\033[m')
+print('Digite \033[0;31m[S]\033[mSIM ou \033[0;31m[N]\033[mNÃO')
 login = str(input('possui login?->')).upper()
-if login == 'SIM':
+if login == 'S':
     input('Login:')
     input('Senha:')
     #print('Realizar agedamento!!!')
