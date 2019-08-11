@@ -9,6 +9,6 @@
 <p align="center">Senha:<input type="password" name="senha" size="20"></p>
 <p align="center"><input type="checkbox" name="aceite" size="25"/> Visualizar senha</p>
 <p align="center"><a href="agendamento.html" ><input type="submit" value="OK"/></a>
-<p align="center"><a href="tela de login.html" ><input type="reset" value="Cancelar"/></a>
+<p align="center"><a href="tela inicial.html" ><input type="reset" value="Cancelar"/></a>
 </body>
 </html>
