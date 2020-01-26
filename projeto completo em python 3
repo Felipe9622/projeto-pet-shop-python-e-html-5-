@@ -1,4 +1,8 @@
 from time import sleep
+import sqlite3
+
+conn = sqlite3.connect('usuarios.db')
+cursor = conn.cursor()
 
 print('Olá meu nome é \033[1;33mTONY\033[m\n')
 sleep(2)
@@ -16,20 +20,28 @@ if login == 'S':
     input('Senha:')
     #print('Realizar agedamento!!!')
 else:
-    nome=str(input("nome completo:"))
+    p_nome_dono = nome=str(input("nome completo:"))
     dia=str(input('data de nascimento:'))
     mes=str(input('mes:'))
     ano=str(input('ano de nascimento:'))
-    mail=str(input('digite e-mail:'))
-    login=str(input('nome de login:'))
+    p_email = mail=str(input('digite e-mail:'))
+    p_fone = str(input('telefone:'))
+    p_login = login=str(input('nome de login:'))
     input('senha:')
     input('repetir a senha:')
     print('''\033[1;31mCONFIRMAÇÃO DE DADOS:\033[m
-          Nome:{}
-          Data:{}/{}/{}
-          E-mail:{}
-          Login:{}'''.format(nome,dia,mes,ano,mail,login))
+    Nome:{}
+    Data:{}/{}/{}
+    E-mail:{}
+    Login:{}'''.format(nome,dia,mes,ano,mail,login))
     print('\nRealizar agedamento!!!')
+
+    cursor.execute("""
+    insert into usuarios (nome_dono,email,login,fone)
+    values (?,?,?,?)""", (p_nome_dono,p_email,p_login,p_fone))
+
+    conn.commit()
+
 sleep(2)
 print('\n')
 print('-=' * 10)
