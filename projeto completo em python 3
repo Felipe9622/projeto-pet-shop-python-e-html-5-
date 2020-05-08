@@ -1,53 +1,56 @@
 from time import sleep
 import sqlite3
 
-conn = sqlite3.connect('usuarios.db')
+conn = sqlite3.connect('loja.db')
 cursor = conn.cursor()
 
 print('Olá meu nome é \033[1;33mTONY\033[m\n')
 sleep(2)
 print('\033[1;33mBEM VINDO A LOJA PET MANIA!!!\033[m\n')
 sleep(3)
-print('\033[1;33mO que será feito agora será nosso primeiro projeto de cadastro de usuário feito pelo meu criador Felipe\033[m\n')
+print(
+    '\033[1;33mO que será feito agora será nosso primeiro projeto de cadastro de usuário feito pelo meu criador Felipe\033[m\n')
 sleep(2)
 print("\033[1;33mPOSSUI LOGIN?\033[m\n")
-#preenchimento deve ser tudo em letra minuscula
+# preenchimento deve ser tudo em letra minuscula
 sleep(2)
 print('Digite \033[0;31m[S]\033[mSIM ou \033[0;31m[N]\033[mNÃO')
 login = str(input('possui login?->')).upper()
 if login == 'S':
     input('Login:')
     input('Senha:')
-    #print('Realizar agedamento!!!')
+    # print('Realizar agedamento!!!')
 else:
-    p_nome_dono = nome=str(input("nome completo:"))
-    dia=str(input('data de nascimento:'))
-    mes=str(input('mes:'))
-    ano=str(input('ano de nascimento:'))
-    p_email = mail=str(input('digite e-mail:'))
-    p_fone = str(input('telefone:'))
-    p_login = login=str(input('nome de login:'))
-    input('senha:')
+    p_nome = nome5 = str(input("nome completo:"))
+    p_cpf = cpf5 = str(input("cpf:"))
+    dia = input('data de nascimento:')
+    mes = input('mes:')
+    ano = input('ano de nascimento:')
+    p_email = mail5 = str(input('digite e-mail:'))
+    p_fone = input('telefone:')
+    p_login = login5 = input('nome de login:')
+    p_senha = senha5 = str(input('senha:'))
     input('repetir a senha:')
     print('''\033[1;31mCONFIRMAÇÃO DE DADOS:\033[m
     Nome:{}
+    cpf:{}
     Data:{}/{}/{}
     E-mail:{}
-    Login:{}'''.format(nome,dia,mes,ano,mail,login))
-    print('\nRealizar agedamento!!!')
-
+    Login:{}
+    Senha:{}'''.format(nome5, cpf5, dia, mes, ano, mail5, login5,senha5))
     cursor.execute("""
-    insert into usuarios (nome_dono,email,login,fone)
-    values (?,?,?,?)""", (p_nome_dono,p_email,p_login,p_fone))
+    INSERT INTO loja (nome,cpf,email,fone,login,senha)
+    VALUES (?,?,?,?,?,?)""",(p_nome, p_cpf, p_email, p_fone, p_login, p_senha))
+conn.commit()
+conn.close()
 
-    conn.commit()
-
+print('\nRealizar agedamento!!!')
 sleep(2)
 print('\n')
 print('-=' * 10)
 print('\033[1;33mCLINICA PET MANIA\033[m')
 print('-=' * 10)
-#print('\n')
+# print('\n')
 sleep(2)
 print('\n\033[1;34mAGENDAMENTO:\033[m\n')
 print('-' * 25)
@@ -61,19 +64,19 @@ while r == 'N':
     mail1 = input("E-mail->")
     endereco = input("Endereço->")
     print('=' * 30)
-    r = str (input('''[S]SIM
+    r = str(input('''[S]SIM
 [N]NÃO
 Podemos continuar: ''')).upper()
 # visibilidade do usuário de todos os seus dados cadastrados
 print('=' * 30)
 print('\n\033[1;30mCONFIRMAÇÃO DE DADOS CADASTRADOS\033[m\nNome:{}\ne-mail:{}\nendereço:{}\n'.format(nome1, mail1,
-                                                                                                      endereco))
+                                                                                                     endereco))
 print('=' * 30)
 sleep(2)
 print('\033[1;30mDADOS DO PET\033[m')
 print('=' * 30)
 print('\n')
-#especie = input('Tipo de especie->')
+# especie = input('Tipo de especie->')
 itens = ('Macho', 'Femea')
 computador = (0, 1)
 p = 'N'
@@ -109,8 +112,8 @@ if mot == '0':
 [3] QUINTA
 [4] SEXTA''')
     mot1 = int(input('datas disponiveis->'))
-    causa2 = ('8:00','9:00','10:30','13:45','14:30','16:30')
-    computador3 = (0,1,2,3,4,5)
+    causa2 = ('8:00', '9:00', '10:30', '13:45', '14:30', '16:30')
+    computador3 = (0, 1, 2, 3, 4, 5)
     print('''\033[1;31mHORARIOS DISPONIVEIS\033[m
 [0] 8:00 
 [1] 9:00
